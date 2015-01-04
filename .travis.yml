@@ -1,13 +1,10 @@
 language: node_js
 node_js:
-  - "0.10"
-
+- '0.10'
 before_script:
-  - chmod +x .travis/after_success.sh
-
+- chmod +x .travis/after_success.sh
 env:
   global:
-    - REPO="git@github.com:pm5/crowdfunding-gitbook"
-    - secure: "Gvn6EepSj0rDu45Az95Pq9Ct4Q8Iqgvl3xBHjaNjmdfp+lfYY3cJz7nRzE1NG+koK1xVX811gvpek7oTpiIxtIQrxJAPDDtQUYzfio6MX/u4SAGKIxlW9hDASpRY3i/GbQQmGdJdA9lZCoMqmAvqaxSrEayXTet7y5J+w7HgmPQ="
-
-after_success: .travis/after_success.sh
+  - REPO="git@github.com:pm5/crowdfunding-gitbook"
+  - secure: dCn5gWVkwa8adfWHfS+z+6o7VyCjXC7pHnyaa+kLWZaZuphKZtloWkfKfW2CdBzImwIPfkCUaEGGKZ49ZddfwYREcy19D6dDWGBy4pBMu5zlBtDbx/JdmdX2hxgOmzCPNSDjLVocxkZyucM9CHFii83ZIHdD7dkNmPCVn3jk0SY=
+after_success: ".travis/after_success.sh"
