@@ -5,12 +5,17 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "google-spreadsheet-download": "*"
+    "google-spreadsheet-download": "*",
+    "gulp": "^3.8.10",
+    "gulp-gh-pages": "^0.4.0"
   },
   "scripts": {
     "republish": "npm run republish:lexicon && npm run republish:glossary",
     "republish:lexicon": "node_modules/.bin/google-spreadsheet-download 1CGni6oPLXliLGWleBSCHYd3zQfsiIc5-SSOfS3F9TTg 2 > lexicon.json",
-    "republish:glossary": "node -e 'JSON.parse(require(\"fs\").readFileSync(\"lexicon.json\")).map(function(d){if(d[\"title\"]&&d[\"definition\"]){console.log(\"\\n# \"+d[\"title\"]+\"\\n\"+d[\"definition\"].trim().replace(/\\n{2,}/g,\"\\n\"))}})' > GLOSSARY.md"
+    "republish:glossary": "node -e 'JSON.parse(require(\"fs\").readFileSync(\"lexicon.json\")).map(function(d){if(d[\"title\"]&&d[\"definition\"]){console.log(\"\\n# \"+d[\"title\"]+\"\\n\"+d[\"definition\"].trim().replace(/\\n{2,}/g,\"\\n\"))}})' > GLOSSARY.md",
+    "build": "gitbook build .",
+    "serve": "gitbook serve .",
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",
