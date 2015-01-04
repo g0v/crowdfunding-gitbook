@@ -8,9 +8,9 @@
     "google-spreadsheet-download": "*"
   },
   "scripts": {
-    "republish": "npm run build:lexicon && npm run build:glossary",
-    "build:lexicon": "node_modules/.bin/google-spreadsheet-download 1CGni6oPLXliLGWleBSCHYd3zQfsiIc5-SSOfS3F9TTg 2 > lexicon.json",
-    "build:glossary": "node -e 'JSON.parse(require(\"fs\").readFileSync(\"lexicon.json\")).map(function(d){if(d[\"title\"]&&d[\"definition\"]){console.log(\"\\n# \"+d[\"title\"]+\"\\n\"+d[\"definition\"].trim().replace(/\\n{2,}/g,\"\\n\"))}})' > GLOSSARY.md"
+    "republish": "npm run republish:lexicon && npm run republish:glossary",
+    "republish:lexicon": "node_modules/.bin/google-spreadsheet-download 1CGni6oPLXliLGWleBSCHYd3zQfsiIc5-SSOfS3F9TTg 2 > lexicon.json",
+    "republish:glossary": "node -e 'JSON.parse(require(\"fs\").readFileSync(\"lexicon.json\")).map(function(d){if(d[\"title\"]&&d[\"definition\"]){console.log(\"\\n# \"+d[\"title\"]+\"\\n\"+d[\"definition\"].trim().replace(/\\n{2,}/g,\"\\n\"))}})' > GLOSSARY.md"
   },
   "repository": {
     "type": "git",
