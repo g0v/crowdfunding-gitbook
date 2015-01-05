@@ -1,5 +1,11 @@
 {
   "plugins": [
-    "lexicon"
-  ]
+    "lexicon",
+    "json"
+  ],
+  "pluginsConfig": {
+    "json": {
+      "output": "_book/content.json"
+    }
+  }
 }
